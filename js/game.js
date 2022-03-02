@@ -1,4 +1,4 @@
-let buttonRock, buttonPaper, buttonScissors;
+//let buttonRock, buttonPaper, buttonScissors;
 
 buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
@@ -8,13 +8,13 @@ function buttonClicked(argButtonName){
     clearMessages();
     console.log(argButtonName + ' został kliknięty');
 
-    let randomNumber, computerMove, playerMove;
+    //const computerMove;
 
-    randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
 
     console.log('Wylosowana liczba to: ' + randomNumber);
 
-    playerMove = argButtonName;
+    //playerMove = argButtonName;
     
     function gameResult(player, comp){
         if (player == comp){
@@ -30,7 +30,7 @@ function buttonClicked(argButtonName){
         }
     }
 
-    printMessage('Twój ruch: ' + playerMove);
+    printMessage('Twój ruch: ' + argButtonName);
 
     if (randomNumber == 1){
         computerMove = 'kamień';
@@ -43,7 +43,7 @@ function buttonClicked(argButtonName){
         printMessage('Komputer wybrał nożyce');
     }
 
-    gameResult(playerMove, computerMove);
+    gameResult(argButtonName, computerMove);
 
 }
 
@@ -109,52 +109,64 @@ buttonScissors.addEventListener('click', function(){
 
 
 
-/*let randomNumber, computerMove, playerMove, playerInpu, player, comp;
+/*
 
-randomNumber = Math.floor(Math.random() * 3 + 1);
+buttonRock = document.getElementById('button-rock');
+buttonPaper = document.getElementById('button-paper');
+buttonScissors = document.getElementById('button-scissors');
 
-console.log('Wylosowana liczba to: ' + randomNumber);
+function buttonClicked(argButtonName){
+    clearMessages();
+    console.log(argButtonName + ' został kliknięty');
 
-playerMove = argButtonName;
+    let computerMove, randomNumber, playerMove;
 
-if (playerInput == '1') {
-    playerMove = 'kamień';
-} else if (playerInput == '2'){
-    playerMove = 'papier';
-} else if (playerInput == '3'){
-    playerMove = 'nożyce';
-}
+    randomNumber = Math.floor(Math.random() * 3 + 1);
 
-console.log('Twój ruch: ' + playerMove);
+    console.log('Wylosowana liczba to: ' + randomNumber);
 
-function gameResult(player, comp){
-    if (player == comp){
-        printMessage('Remis');
-    } else if (player == 'kamień' && comp == 'nożyce'){
-        printMessage('Wygrałeś');
-    } else if (player == 'papier' && comp == 'kamień'){
-        printMessage('Wygrałeś');
-    } else if (player == 'nożyce' && comp == 'papier'){
-        printMessage('Wygrałeś');
-    } else {
-        printMessage('Przegrałeś');
+    playerMove = argButtonName;
+    
+    function gameResult(player, comp){
+        if (player == comp){
+            printMessage('Remis');
+        } else if (player == 'kamień' && comp == 'nożyce'){
+            printMessage('Wygrałeś');
+        } else if (player == 'papier' && comp == 'kamień'){
+            printMessage('Wygrałeś');
+        } else if (player == 'nożyce' && comp == 'papier'){
+            printMessage('Wygrałeś');
+        } else {
+            printMessage('Przegrałeś');
+        }
     }
+
+    printMessage('Twój ruch: ' + playerMove);
+
+    if (randomNumber == 1){
+        computerMove = 'kamień';
+        printMessage('Komputer wybrał kamień');
+    } else if (randomNumber == 2) {
+        computerMove = 'papier';
+        printMessage('Komputer wybrał papier');
+    } else if (randomNumber == 3){
+        computerMove = 'nożyce';
+        printMessage('Komputer wybrał nożyce');
+    }
+
+    gameResult(playerMove, computerMove);
+
 }
 
-printMessage('Twój ruch: ' + playerMove);
-
-if (randomNumber == 1){
-    computerMove = 'kamień';
-	printMessage('Komputer wybrał kamień');
-} else if (randomNumber == 2) {
-    computerMove = 'papier';
-	printMessage('Komputer wybrał papier');
-} else if (randomNumber == 3){
-    computerMove = 'nożyce';
-	printMessage('Komputer wybrał nożyce');
-}
-
-gameResult(playerMove, computerMove);
+buttonRock.addEventListener('click', function(){
+    buttonClicked('kamień');
+});
+buttonPaper.addEventListener('click', function(){
+    buttonClicked('papier');
+});
+buttonScissors.addEventListener('click', function(){
+    buttonClicked('nożyce');
+});
 
 */
 
