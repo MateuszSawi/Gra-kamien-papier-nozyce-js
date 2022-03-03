@@ -1,4 +1,3 @@
-//let buttonRock, buttonPaper, buttonScissors;
 const buttonRock = document.getElementById('button-rock');
 const buttonPaper = document.getElementById('button-paper');
 const buttonScissors = document.getElementById('button-scissors');
